@@ -1,6 +1,6 @@
-# rehype-semantic-blockquotes
+# rehype-alerts
 
-A **[rehype][]** plugin to extend blockquote syntax to make it simple to mention/cite sources in a semantically correct way.
+A **[rehype][]** plugin to allow for github-style alerts but with more customisation
 
 ## Contents
 
@@ -14,68 +14,11 @@ A **[rehype][]** plugin to extend blockquote syntax to make it simple to mention
 
 ## What is this?
 
-This package is a [unified][] ([rehype][]) plugin to extend blockquote syntax to allow simple citation/mention of source from which the quote originates conforming to semantic HTML standards
+This package is a [unified][] ([rehype][]) plugin to allow you to create github alerts with way more control
 
 ## When should I use this?
 
-This project is useful if you want to have a simple syntax for citations in your blockquotes.
-
-In markdown we can create blockquotes such as:
-
-```md
-> We cannot solve our problems with the same thinking we used when we created them.
-```
-
-But often times, it may be desireable to include a reference to the person that mentioned that quote.
-We could use the `<cite>` element:
-
-```md
-> We cannot solve our problems with the same thinking we used when we created them.
-> -- <cite>Albert Einstein</cite>
-```
-
-But that is _semantically incorrect_! [A `<cite>` element should refer to _work_](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite#usage_notes) and not _people_. (e.g. instagram post, book, article)
-
-Additionally, putting a `<cite>` element within a `<blockquote>` is [forbidden by the HTML spec](https://www.w3.org/TR/html5-author/the-blockquote-element.html#the-blockquote-element) because it would make the citation a part of the quote.
-
-So another solution could be something like this:
-
-```md
-> We cannot solve our problems with the same thinking we used when we created them.
-
--- Albert Einstein
-```
-
-But that feels wrong, because it would render in the following way:
-
-```html
-<blockquote>
-  <p>
-    We cannot solve our problems with the same thinking we used when we created
-    them.
-  </p>
-</blockquote>
-<p>-- Albert Einstein</p>
-```
-
-If we want to style them together we would have to wrap them within a parent element.
-
-But there is a different approach, using the `<figure>` element we can create a more semantic version.
-
-This plugin does just that.
-
-Then we can easily style the blockquote and the caption however we want to using CSS
-
-```css
-[data-blockquote-container] {
-  display: flex;
-  flex-direction: column;
-  flex-gap: 8px;
-}
-[data-blockquote-credit]::before {
-  content: "- ";
-}
-```
+This project is useful if you want to have admonitions / alerts in markdown
 
 ## Install
 
