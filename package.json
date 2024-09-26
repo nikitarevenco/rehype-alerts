@@ -1,0 +1,30 @@
+{
+  "name": "rehype-alerts",
+  "version": "1.0.1",
+  "type": "module",
+  "license": "MIT",
+  "description": "",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "remarkConfig": {},
+  "author": "Nikita Revenco <hi@nikitarevenco.com> (https://github.com/nikitarevenco/)",
+  "homepage": "https://github.com/nikitarevenco/rehype-alerts",
+  "bugs": "https://github.com/nikitarevenco/rehype-alerts/issues",
+  "dependencies": {
+    "@types/hast": "^3.0.4",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "unified": "^11.0.5"
+  }
+}
