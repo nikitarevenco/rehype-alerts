@@ -1,9 +1,9 @@
 {
   "name": "rehype-alerts",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "type": "module",
   "license": "MIT",
-  "description": "",
+  "description": "A rehype plugin to add github-style blockquote syntax for alerts",
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/unified"
@@ -11,20 +11,25 @@
   "keywords": [],
   "main": "index.js",
   "scripts": {
-    "test": "node test.js"
+    "test": "tsx index.test.js",
+    "prepare": "tsc"
   },
   "remarkConfig": {},
   "author": "Nikita Revenco <hi@nikitarevenco.com> (https://github.com/nikitarevenco/)",
   "homepage": "https://github.com/nikitarevenco/rehype-alerts",
   "bugs": "https://github.com/nikitarevenco/rehype-alerts/issues",
   "dependencies": {
-    "@types/hast": "^3.0.4",
+    "hast-util-whitespace": "^3.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@types/hast": "^3.0.4",
+    "rehype-parse": "^9.0.1",
     "rehype-stringify": "^10.0.0",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
     "unified": "^11.0.5"
   }
 }
