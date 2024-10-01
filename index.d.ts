@@ -1,21 +1,24 @@
+import type { Root } from "hast";
 /**
- * A rehype plugin to extend blockquote syntax to make it simple to mention/cite sources in a semantically correct way.
- *
- * More info: [https://github.com/nikitarevenco/remark-semantic-blockquotes](https://github.com/nikitarevenco/remark-semantic-blockquotes)
+ * A rehype plugin to add github-style blockquote syntax for alerts.
+ * More info: [https://github.com/nikitarevenco/rehype-alerts](https://github.com/nikitarevenco/rehype-alerts)
  */
-export default function rehypeAlerts(options: {
-  /**
-   * Attribute name for the <aside> element, default: "data-alert-container"
-   */
-  aside?: string;
-  /**
-   * Attribute name for the aside header element, default: "data-alert-header"
-   */
-  header?: string;
-  /**
-   * HTML Tag to use for the aside header element, default: "p"
-   */
-  headerTag?: string;
-}): (tree: Root) => undefined;
-
-export type Root = import("hast").Root;
+export default function rehypeAlerts(opts?: {
+    /**
+     * Attribute name for the `<aside>` element
+     */
+    aside: string;
+    /**
+     * Attribute name containing the title for the alert in the `<aside>` element
+     */
+    asideTitle: string;
+    /**
+     * Attribute name for the title element
+     */
+    header: string;
+    /**
+     * Element type for the title element
+     */
+    headerTag: string;
+}): (tree: Root) => void;
+//# sourceMappingURL=index.d.ts.map

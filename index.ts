@@ -40,7 +40,7 @@ export default function rehypeAlerts(
         return;
       }
 
-      const alertSyntax = firstParagraph.children.at(0);
+      const alertSyntax = firstParagraph.children[0];
 
       if (!alertSyntax) {
         return;
@@ -64,13 +64,13 @@ export default function rehypeAlerts(
         return;
       }
 
-      const fullMatch = syntaxMatch.at(0)
+      const fullMatch = syntaxMatch[0];
 
       if (!fullMatch) {
         return;
       }
 
-      const alertType = syntaxMatch.at(1);
+      const alertType = syntaxMatch[1];
 
       const withAlertTypeRemoved = alertSyntax.value.slice(
         fullMatch.length,
