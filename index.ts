@@ -13,24 +13,24 @@ export default function rehypeAlerts(
     /**
      * Attribute name for the `<aside>` element
      */
-    aside: "data-alert-container",
+    aside: "dataAlertContainer",
     /**
      * Attribute name containing the title for the alert in the `<aside>` element
      */
-    asideTitle: "data-alert-title",
+    asideTitle: "dataAlertTitle",
     /**
      * Attribute name for the title element
      */
-    header: "data-alert-header",
+    header: "dataAlertHeader",
     /**
      * Element type for the title element
      */
-    headerTag: "h5",
+    headerTag: "p",
   },
 ) {
   return (tree: Root) => {
     visit(tree, "element", (alert, index, parent) => {
-      if (!index || !parent || alert.tagName !== "blockquote") {
+      if (index === undefined || !parent || alert.tagName !== "blockquote") {
         return;
       }
 
